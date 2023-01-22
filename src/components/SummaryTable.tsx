@@ -28,7 +28,7 @@ export function SummaryTable() {
     api.get('/summary').then(response => {
       setSummary(response.data)
     })
-  })
+  }, [])
 
   return (
     <div className="w-full flex mt-3">
