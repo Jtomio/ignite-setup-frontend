@@ -28,7 +28,7 @@ export function HabitDay({ defaultCompleted = 0, amount = 0, date }: HabitProps)
   return (
     <Popover.Root>
       <Popover.Trigger
-        className={clsx("w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg", {
+        className={clsx("w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg transition-colors duration-300 focus:outline focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background", {
           'bg-zinc-900 border-zinc-800': completedPerncentage === 0,
           'bg-violet-900 border-violet-700': completedPerncentage > 0 && completedPerncentage < 20,
           'bg-violet-800 border-violet-600': completedPerncentage >= 20 && completedPerncentage < 40,
@@ -45,7 +45,10 @@ export function HabitDay({ defaultCompleted = 0, amount = 0, date }: HabitProps)
 
           <HabitList date={date} onCompletedChanged={handleCompletedChanged} />
 
-          <Popover.Arrow className='fill-zinc-900' height={8} width={16} />
+          <Popover.Arrow
+            className='fill-zinc-900 '
+            height={8}
+            width={16} />
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>
